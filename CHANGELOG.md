@@ -2,6 +2,63 @@
 
 > Package changelog.
 
+<section class="release" id="unreleased">
+
+## Unreleased (2025-06-18)
+
+<section class="features">
+
+### Features
+
+-   [`c5bcc23`](https://github.com/stdlib-js/stdlib/commit/c5bcc2354cc35dcfff5774ee885909ad27d08241) - add C implementation for `stats/base/dists/normal/cdf` [(#3911)](https://github.com/stdlib-js/stdlib/pull/3911)
+
+</section>
+
+<!-- /.features -->
+
+<section class="issues">
+
+### Closed Issues
+
+This release closes the following issue:
+
+[#3771](https://github.com/stdlib-js/stdlib/issues/3771)
+
+</section>
+
+<!-- /.issues -->
+
+<section class="commits">
+
+### Commits
+
+<details>
+
+-   [`c5bcc23`](https://github.com/stdlib-js/stdlib/commit/c5bcc2354cc35dcfff5774ee885909ad27d08241) - **feat:** add C implementation for `stats/base/dists/normal/cdf` [(#3911)](https://github.com/stdlib-js/stdlib/pull/3911) _(by Manvith M, Philipp Burckhardt, stdlib-bot)_
+
+</details>
+
+</section>
+
+<!-- /.commits -->
+
+<section class="contributors">
+
+### Contributors
+
+A total of 2 people contributed to this release. Thank you to the following contributors:
+
+-   Manvith M
+-   Philipp Burckhardt
+
+</section>
+
+<!-- /.contributors -->
+
+</section>
+
+<!-- /.release -->
+
 <section class="release" id="v0.2.2">
 
 ## 0.2.2 (2024-07-28)
