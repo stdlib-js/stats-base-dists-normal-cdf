@@ -65,13 +65,13 @@ where `µ` is the mean and `σ` is the standard deviation.
 ## Usage
 
 ```javascript
-import cdf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-normal-cdf@esm/index.mjs';
+import cdf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-normal-cdf@v0.3.1-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-normal-cdf@esm/index.mjs';
+import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-normal-cdf@v0.3.1-esm/index.mjs';
 ```
 
 #### cdf( x, mu, sigma )
@@ -154,7 +154,7 @@ y = mycdf( 8.0 );
 
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@esm/index.mjs';
 import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@esm/index.mjs';
-import cdf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-normal-cdf@esm/index.mjs';
+import cdf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-normal-cdf@v0.3.1-esm/index.mjs';
 
 var opts = {
     'dtype': 'float64'
