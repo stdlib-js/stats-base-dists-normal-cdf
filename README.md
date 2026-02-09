@@ -58,25 +58,32 @@ where `µ` is the mean and `σ` is the standard deviation.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/stats-base-dists-normal-cdf
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import cdf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-normal-cdf@esm/index.mjs';
-```
-The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/stats-base-dists-normal-cdf/tags). For example,
-
-```javascript
-import cdf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-normal-cdf@v0.3.1-esm/index.mjs';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { factory } from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-normal-cdf@esm/index.mjs';
+var cdf = require( '@stdlib/stats-base-dists-normal-cdf' );
 ```
 
 #### cdf( x, mu, sigma )
@@ -151,15 +158,10 @@ y = mycdf( 8.0 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@esm/index.mjs';
-import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@esm/index.mjs';
-import cdf from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-base-dists-normal-cdf@esm/index.mjs';
+```javascript
+var uniform = require( '@stdlib/random-array-uniform' );
+var logEachMap = require( '@stdlib/console-log-each-map' );
+var cdf = require( '@stdlib/stats-base-dists-normal-cdf' );
 
 var opts = {
     'dtype': 'float64'
@@ -169,10 +171,6 @@ var mu = uniform( 10, -5.0, 5.0, opts );
 var x = uniform( 10, 0.0, 10.0, opts );
 
 logEachMap( 'x: %0.4f, µ: %0.4f, σ: %0.4f, F(x;µ,σ): %0.4f', x, mu, sigma, cdf );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -181,7 +179,101 @@ logEachMap( 'x: %0.4f, µ: %0.4f, σ: %0.4f, F(x;µ,σ): %0.4f', x, mu, sigma, c
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/stats/base/dists/normal/cdf.h"
+```
+
+#### stdlib_base_dists_normal_cdf( x, a, b )
+
+Evaluates the [cumulative distribution function][cdf] (CDF) for a [normal][normal-distribution] distribution with parameters `mu` (mean) and `sigma` (standard deviation).
+
+```c
+double out = stdlib_base_dists_normal_cdf( 2.0, 0.0, 1.0 );
+// returns ~0.977
+```
+
+The function accepts the following arguments:
+
+-   **x**: `[in] double` input value.
+-   **mu**: `[in] double` mean.
+-   **sigma**: `[in] double` standard deviation.
+
+```c
+double stdlib_base_dists_normal_cdf( cconst double x, const double mu, const double sigma );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/stats/base/dists/normal/cdf.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+static double random_uniform( const double min, const double max ) {
+    double v = (double)rand() / ( (double)RAND_MAX + 1.0 );
+    return min + ( v*(max-min) );
+}
+
+int main( void ) {
+    double sigma;
+    double mu;
+    double x;
+    double y;
+    int i;
+
+    for ( i = 0; i < 10; i++ ) {
+        x = random_uniform( 0.0, 10.0 );
+        mu = random_uniform( -5.0, 5.0 );
+        sigma = random_uniform( 0.1, 20.0 );
+        y = stdlib_base_dists_normal_cdf( x, mu, sigma );
+        printf( "x: %lf, µ: %lf, σ: %lf, F(x;µ,σ): %lf\n", x, mu, sigma, y );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -200,7 +292,7 @@ logEachMap( 'x: %0.4f, µ: %0.4f, σ: %0.4f, F(x;µ,σ): %0.4f', x, mu, sigma, c
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -230,8 +322,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/stats-base-dists-normal-cdf.svg
 [npm-url]: https://npmjs.org/package/@stdlib/stats-base-dists-normal-cdf
 
-[test-image]: https://github.com/stdlib-js/stats-base-dists-normal-cdf/actions/workflows/test.yml/badge.svg?branch=v0.3.1
-[test-url]: https://github.com/stdlib-js/stats-base-dists-normal-cdf/actions/workflows/test.yml?query=branch:v0.3.1
+[test-image]: https://github.com/stdlib-js/stats-base-dists-normal-cdf/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/stats-base-dists-normal-cdf/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/stats-base-dists-normal-cdf/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/stats-base-dists-normal-cdf?branch=main
