@@ -50,11 +50,11 @@
     "@stdlib/utils-library-manifest": "^0.2.4"
   },
   "devDependencies": {
+    "@stdlib/assert-is-almost-same-value": "^0.1.1",
     "@stdlib/console-log-each-map": "^0.1.1",
     "@stdlib/constants-float64-eps": "^0.2.3",
     "@stdlib/constants-float64-ninf": "^0.2.3",
     "@stdlib/constants-float64-pinf": "^0.2.3",
-    "@stdlib/math-base-special-abs": "^0.2.3",
     "@stdlib/random-array-uniform": "^0.2.2",
     "@stdlib/string-format": "^0.2.3",
     "@stdlib/utils-try-require": "^0.2.3",
