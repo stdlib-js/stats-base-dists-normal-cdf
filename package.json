@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@stdlib/assert-is-almost-same-value": "^0.1.1",
-    "@stdlib/console-log-each-map": "^0.1.1",
+    "@stdlib/console-log-each-map": "^0.1.2",
     "@stdlib/constants-float64-eps": "^0.2.3",
     "@stdlib/constants-float64-ninf": "^0.2.3",
     "@stdlib/constants-float64-pinf": "^0.2.3",
